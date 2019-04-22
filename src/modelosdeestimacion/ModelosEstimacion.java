@@ -22,7 +22,6 @@ public class ModelosEstimacion extends javax.swing.JFrame {
     private ModeloRegresion regresion;
     public ModelosEstimacion() {
         initComponents();
-        txtregresion.setEditable(false);
         setLocationRelativeTo(this);
     }
 
@@ -51,7 +50,17 @@ public class ModelosEstimacion extends javax.swing.JFrame {
         comboEcuacion = new javax.swing.JComboBox();
         panelRegresion = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        txtregresion = new javax.swing.JTextField();
+        txtentrada = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        txtsalida = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        txtinternos = new javax.swing.JTextField();
+        txtexterno = new javax.swing.JTextField();
+        txtconsulta = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        comboComplejidad = new javax.swing.JComboBox();
         panelGrafico = new javax.swing.JPanel();
         btnCalcular = new javax.swing.JButton();
 
@@ -83,6 +92,11 @@ public class ModelosEstimacion extends javax.swing.JFrame {
 
         jLabel2.setText("Numero de lineas de codigo:");
 
+        txtKLDC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtKLDCActionPerformed(evt);
+            }
+        });
         txtKLDC.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtKLDCKeyReleased(evt);
@@ -95,8 +109,8 @@ public class ModelosEstimacion extends javax.swing.JFrame {
             panelKLCDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelKLCDLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
                 .addComponent(txtKLDC, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -110,7 +124,7 @@ public class ModelosEstimacion extends javax.swing.JFrame {
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
-        PanelCocomo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cocomo Básico", 0, 0, new java.awt.Font("Tahoma", 0, 12))); // NOI18N
+        PanelCocomo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cocomo Básico", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 12))); // NOI18N
 
         jLabel3.setText("Tipo de proyecto");
 
@@ -122,21 +136,21 @@ public class ModelosEstimacion extends javax.swing.JFrame {
             PanelCocomoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelCocomoLayout.createSequentialGroup()
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63)
+                .addGap(65, 65, 65)
                 .addComponent(comboCocomo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         PanelCocomoLayout.setVerticalGroup(
             PanelCocomoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelCocomoLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addContainerGap()
                 .addGroup(PanelCocomoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(comboCocomo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        panelEcuacion.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Modelo Ecuación del software", 0, 0, new java.awt.Font("Tahoma", 0, 12))); // NOI18N
+        panelEcuacion.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Modelo Ecuación del software", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 12))); // NOI18N
 
         jLabel4.setText("Parametro de productividad");
 
@@ -155,46 +169,116 @@ public class ModelosEstimacion extends javax.swing.JFrame {
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
                 .addComponent(comboEcuacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 10, Short.MAX_VALUE))
         );
         panelEcuacionLayout.setVerticalGroup(
             panelEcuacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelEcuacionLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addContainerGap()
                 .addGroup(panelEcuacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(comboEcuacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        panelRegresion.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Modelo de Regresión", 0, 0, new java.awt.Font("Tahoma", 0, 12))); // NOI18N
+        panelRegresion.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Modelo de Regresión", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 12))); // NOI18N
 
-        jLabel5.setText("PF");
+        jLabel5.setText("Entradas de Usuario");
 
-        txtregresion.addActionListener(new java.awt.event.ActionListener() {
+        txtentrada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtregresionActionPerformed(evt);
+                txtentradaActionPerformed(evt);
             }
         });
+
+        jLabel6.setText("Salidas de Usuario");
+
+        txtsalida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtsalidaActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("Archivos Internos");
+
+        jLabel8.setText("Archivos Externos");
+
+        jLabel9.setText("Consultas de Usuario");
+
+        txtinternos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtinternosActionPerformed(evt);
+            }
+        });
+
+        txtexterno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtexternoActionPerformed(evt);
+            }
+        });
+
+        txtconsulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtconsultaActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setText("Complejidad");
+
+        comboComplejidad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SIMPLE", "MEDIO", "COMPLEJO" }));
 
         javax.swing.GroupLayout panelRegresionLayout = new javax.swing.GroupLayout(panelRegresion);
         panelRegresion.setLayout(panelRegresionLayout);
         panelRegresionLayout.setHorizontalGroup(
             panelRegresionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRegresionLayout.createSequentialGroup()
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(txtregresion, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(panelRegresionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegresionLayout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))
+                    .addGroup(panelRegresionLayout.createSequentialGroup()
+                        .addGroup(panelRegresionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(39, 39, 39)))
+                .addGroup(panelRegresionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtconsulta)
+                    .addComponent(txtexterno)
+                    .addComponent(txtinternos)
+                    .addComponent(txtsalida)
+                    .addComponent(txtentrada)
+                    .addComponent(comboComplejidad, 0, 82, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         panelRegresionLayout.setVerticalGroup(
             panelRegresionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRegresionLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGroup(panelRegresionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comboComplejidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelRegresionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(txtregresion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(30, Short.MAX_VALUE))
+                    .addComponent(txtentrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelRegresionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(txtsalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelRegresionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(txtinternos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelRegresionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtexterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelRegresionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtconsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9)))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -219,7 +303,7 @@ public class ModelosEstimacion extends javax.swing.JFrame {
                 .addComponent(PanelCocomo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(panelEcuacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(panelRegresion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -249,9 +333,6 @@ public class ModelosEstimacion extends javax.swing.JFrame {
         panelPrincipal.setLayout(panelPrincipalLayout);
         panelPrincipalLayout.setHorizontalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
-                .addGap(0, 91, Short.MAX_VALUE)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 912, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(panelPrincipalLayout.createSequentialGroup()
                 .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelPrincipalLayout.createSequentialGroup()
@@ -266,25 +347,25 @@ public class ModelosEstimacion extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(panelGrafico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
+                .addGap(0, 20, Short.MAX_VALUE)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 1016, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         panelPrincipalLayout.setVerticalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelPrincipalLayout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(panelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelPrincipalLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(panelGrafico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(panelPrincipalLayout.createSequentialGroup()
                         .addGap(182, 182, 182)
-                        .addComponent(btnCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(btnCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelGrafico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(200, 200, 200))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -297,7 +378,7 @@ public class ModelosEstimacion extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 625, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -309,31 +390,38 @@ public class ModelosEstimacion extends javax.swing.JFrame {
         if(txtKLDC.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Debe ingresar una cantidad en el campo de texto");
         }else{
+            // lineas de codigo
             float LKCD = Float.parseFloat( txtKLDC.getText());
-        
+            
+            // opcion del escogida del cocomo
             String cocomoOption = (String) comboCocomo.getSelectedItem();
             
+            // opcion del escogida de la ecuacion
             String productividad = (String) comboEcuacion.getSelectedItem();
+            
+            // opcion del escogida del modelo de regresion
+            String complejidad = (String) comboComplejidad.getSelectedItem();
+            float entradas = Float.parseFloat(txtentrada.getText());
+            float salidas = Float.parseFloat(txtsalida.getText());
+            float internos = Float.parseFloat(txtinternos.getText());
+            float externos = Float.parseFloat(txtexterno.getText());
+            float consultas = Float.parseFloat(txtconsulta.getText());
+            
+            
             
             float productividadOption = Float.parseFloat
                                         (ecuacionDelSoftware.ComboProductividad
                                         (productividad));
             
             ecuacionDelSoftware = new EcuacionDelSoftware(LKCD, productividadOption);
-            cocomoBasico = new CocomoBasico(LKCD, cocomoOption);
-            regresion = new ModeloRegresion();
-            
-            float Mregresion = regresion.getEsfuerzo(LKCD);
-            
-            System.out.println("regresion "+Mregresion);
-       
-            System.out.println("Ecuacion del software (E): "+ecuacionDelSoftware.getEsfuerzo());
-            System.out.println("Cocomo basico (E): "+cocomoBasico.getEsfuerzo());
+            cocomoBasico = new CocomoBasico(LKCD, cocomoOption); 
+            regresion = new ModeloRegresion(complejidad);
             
             float esfuerzoEcuacion = (float) ecuacionDelSoftware.getEsfuerzo();
             float esfuerzoCocomo = (float) cocomoBasico.getEsfuerzo();
-            
-            Graficar.generarBarrar(esfuerzoEcuacion,esfuerzoCocomo,Mregresion);
+            float esfuerzoRegresion = (float) regresion.getEsfuerzo(entradas,salidas,internos,externos,consultas);
+            System.out.print(esfuerzoRegresion);
+            Graficar.generarBarrar(esfuerzoEcuacion,esfuerzoCocomo,esfuerzoRegresion);
         }
 
     }//GEN-LAST:event_btnCalcularActionPerformed
@@ -342,14 +430,34 @@ public class ModelosEstimacion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_comboEcuacionActionPerformed
 
-    private void txtregresionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtregresionActionPerformed
+    private void txtentradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtentradaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtregresionActionPerformed
+    }//GEN-LAST:event_txtentradaActionPerformed
 
     private void txtKLDCKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtKLDCKeyReleased
         // TODO add your handling code here:
-        txtregresion.setText(txtKLDC.getText());
+        
     }//GEN-LAST:event_txtKLDCKeyReleased
+
+    private void txtsalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtsalidaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtsalidaActionPerformed
+
+    private void txtinternosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtinternosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtinternosActionPerformed
+
+    private void txtexternoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtexternoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtexternoActionPerformed
+
+    private void txtconsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtconsultaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtconsultaActionPerformed
+
+    private void txtKLDCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKLDCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtKLDCActionPerformed
 
     /**
      * @param args the command line arguments
@@ -390,12 +498,18 @@ public class ModelosEstimacion extends javax.swing.JFrame {
     private javax.swing.JPanel PanelCocomo;
     private javax.swing.JButton btnCalcular;
     private javax.swing.JComboBox comboCocomo;
+    private javax.swing.JComboBox comboComplejidad;
     private javax.swing.JComboBox comboEcuacion;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPanel panelEcuacion;
@@ -405,6 +519,10 @@ public class ModelosEstimacion extends javax.swing.JFrame {
     private javax.swing.JPanel panelRegresion;
     private javax.swing.JPanel panelTitulo;
     private javax.swing.JTextField txtKLDC;
-    private javax.swing.JTextField txtregresion;
+    private javax.swing.JTextField txtconsulta;
+    private javax.swing.JTextField txtentrada;
+    private javax.swing.JTextField txtexterno;
+    private javax.swing.JTextField txtinternos;
+    private javax.swing.JTextField txtsalida;
     // End of variables declaration//GEN-END:variables
 }

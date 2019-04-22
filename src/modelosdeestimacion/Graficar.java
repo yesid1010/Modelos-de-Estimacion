@@ -29,8 +29,9 @@ public class Graficar {
                            
             JFreeChart jf = ChartFactory.createBarChart3D("Modelos de Estimación", "Modelos", "Esfuerzo", dc, PlotOrientation.VERTICAL, true, true, true);
             ChartFrame f = new ChartFrame("Modelos de estimacion", jf);
-            f.setSize(500,600);
-            f.setLocationRelativeTo(null);
+            f.setSize(450,550);
+            f.setLocation(750, 140);
+            //f.setLocationRelativeTo(null);
             f.setVisible(true);
         } catch (Exception e) {
         }
